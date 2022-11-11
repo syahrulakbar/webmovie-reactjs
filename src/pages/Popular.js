@@ -1,10 +1,14 @@
 import "../style/style.css";
 import MovieList from "../components/MovieList";
+import Banner from "../components/Banner";
 import endpoint from "../data/api-config";
 import React, { useEffect, useState } from "react";
+import heroImage from "../image/banner.jpg";
 const Popular = () => {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const titlePages = "All movies are here, search by category";
+
   const getMovieRequest = async () => {
     try {
       const response = await fetch(endpoint.topRated);
@@ -31,6 +35,7 @@ const Popular = () => {
 
   return (
     <>
+      <Banner bannerPhoto={heroImage} titlePages={titlePages} />
       <MovieList movies={movies} handleFavoritesClick={addFavoriteMovie} />
     </>
   );

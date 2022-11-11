@@ -1,9 +1,12 @@
 import "../style/style.css";
 import React, { useEffect, useState } from "react";
 import MovieList from "../components/MovieList";
+import secondImage from "../image/netflix-banner.png";
+import Banner from "../components/Banner";
 
 const Favorite = () => {
   const [favorites, setFavorites] = useState([]);
+  const titlePages = "Your Favorite Movies";
   const removeFavoriteMovie = (movie) => {
     const newFavoriteList = favorites.filter((favorite) => favorite.id !== movie.id);
     setFavorites(newFavoriteList);
@@ -20,7 +23,12 @@ const Favorite = () => {
       setFavorites(movieFavourites);
     }
   }, [setFavorites]);
-  return <MovieList movies={favorites} handleFavoritesClick={removeFavoriteMovie} />;
+  return (
+    <>
+      <Banner bannerPhoto={secondImage} titlePages={titlePages} />
+      <MovieList movies={favorites} handleFavoritesClick={removeFavoriteMovie} />
+    </>
+  );
 };
 
 export default Favorite;

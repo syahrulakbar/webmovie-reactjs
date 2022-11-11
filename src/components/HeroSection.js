@@ -11,7 +11,7 @@ const HeroSection = () => {
       </div>
       <div className="banner-contents absolute inset-0 text-white grid text-center items-center justify-center">
         <div className="max-w-4xl">
-          <h1 className="banner-title text-4xl lg:text-7xl font-semibold pb-2">Katalog Film, Acara TV Terbaru dan Terlengkap</h1>
+          <h1 className="banner-title text-4xl lg:text-7xl font-semibold pb-2">The Latest and Most Complete Catalog of Movies, TV Shows</h1>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import "../style/style.css";
 import TabNav from "../components/TabNav";
+import HeroSection from "../components/HeroSection";
 
 import MovieList from "../components/MovieList";
 import endpoint from "../data/api-config";
@@ -38,6 +39,7 @@ const Home = () => {
 
   return (
     <>
+      <HeroSection />
       <TabNav searchValue={searchValue} setSearchValue={setSearchValue} />
       <MovieList movies={movies} handleFavoritesClick={addFavoriteMovie} />
     </>
