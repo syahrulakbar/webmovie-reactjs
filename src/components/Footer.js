@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="w-[80%] border-t border-slate-100"></div>
       </div>
       <div className="w-full pt-2 justify-center flex">
-        <div id="contact-logo" className="flex mb-5">
+        <div id="contact-logo" className="flex pb-5">
           {/* <!-- Github --> */}
           <a
             href="https://github.com/syahrulakbar"

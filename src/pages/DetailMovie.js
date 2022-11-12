@@ -13,7 +13,6 @@ const DetailMovie = () => {
   const [movies, setMovies] = useState([]);
   const [credits, setCredits] = useState([]);
   const [similar, setSimilar] = useState([]);
-  const [favorites, setFavorites] = useState([]);
 
   const getMovieRequest = async () => {
     try {
@@ -30,24 +29,15 @@ const DetailMovie = () => {
       console.error(error);
     }
   };
-  const saveToLocalStorage = (items) => {
-    window.localStorage.setItem("favoriteMovies", JSON.stringify(items));
-  };
-  const addFavoriteMovie = (movie) => {
-    const newFavoriteList = [...(favorites || []), movie];
-    setFavorites(newFavoriteList);
-    saveToLocalStorage(newFavoriteList);
-  };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getMovieRequest();
-    const movieFavourites = JSON.parse(window.localStorage.getItem("favoriteMovies"));
-    setFavorites(movieFavourites);
   }, []);
   return (
     <>
       <MovieDetail movies={movies} movieCredits={credits} />
-      <CastMovie movies={similar} handleFavoritesClick={addFavoriteMovie} />
+      <CastMovie movies={similar} />
     </>
   );
 };

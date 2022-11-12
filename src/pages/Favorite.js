@@ -1,32 +1,25 @@
 import "../style/style.css";
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import MovieList from "../components/MovieList";
 import secondImage from "../image/netflix-banner.png";
-import Banner from "../components/Banner";
-
+import { FavoritesContext } from "../context/FavoriteContext";
 const Favorite = () => {
-  const [favorites, setFavorites] = useState([]);
-  const titlePages = "Your Favorite Movies";
-  const removeFavoriteMovie = (movie) => {
-    const newFavoriteList = favorites.filter((favorite) => favorite.id !== movie.id);
-    setFavorites(newFavoriteList);
-    saveToLocalStorage(newFavoriteList);
-  };
-  const saveToLocalStorage = (items) => {
-    window.localStorage.setItem("favoriteMovies", JSON.stringify(items));
-  };
-  useEffect(() => {
-    const movieFavourites = JSON.parse(window.localStorage.getItem("favoriteMovies"));
-    if (movieFavourites == null) {
-      setFavorites([]);
-    } else {
-      setFavorites(movieFavourites);
-    }
-  }, [setFavorites]);
+  const { favorites, totalFavorites } = useContext(FavoritesContext);
   return (
     <>
-      <Banner bannerPhoto={secondImage} titlePages={titlePages} />
-      <MovieList movies={favorites} handleFavoritesClick={removeFavoriteMovie} />
+      <section className="banner">
+        <div className="relative">
+          <img src={secondImage} alt="banner" className="h-52 object-cover w-full bg-cover bg-center" />
+          <div className="bg-gradient-to-t opacity-70 from-black absolute inset-0"></div>
+          <div className="bg-gradient-to-b opacity-70 from-black absolute inset-0"></div>
+        </div>
+        <div className="banner-contents  absolute top-20 w-full text-center ">
+          <div className="flex justify-center items-center ">
+            <h1 className="banner-title text-white text-2xl  lg:text-4xl font-semibold pb-2">Your Favorite Movies</h1>
+          </div>
+        </div>
+      </section>
+      {totalFavorites === 0 ? <MovieList movies={favorites} /> : <MovieList movies={favorites} />}
     </>
   );
 };

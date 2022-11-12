@@ -30,7 +30,7 @@ const SearchBar = () => {
               })}
               className="nav-link  cursor-pointer   hover:text-slate-800 lg:text-3xl sm:text-xl text-lg font-semibold  sm:px-2 px-2 py-3 lg:px-3 lg:py-3 rounded-lg ease-in-out transition-all duration-100"
             >
-              Popular
+              Genre
             </NavLink>
             <NavLink
               to="favorite"

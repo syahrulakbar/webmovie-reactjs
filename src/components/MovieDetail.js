@@ -1,17 +1,29 @@
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const MovieDetail = (props) => {
   const IMG_URL = "https://image.tmdb.org/t/p/w500";
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   if (props.movies.genres === undefined || props.movieCredits.cast === undefined) {
   } else {
     return (
       <>
-        <section className="banner h-fit">
+        <section className="banner h-fit overflow-hidden">
           <div className="relative h-fit">
             <img src={props.movies.poster_path ? IMG_URL + props.movies.poster_path : "http://via.placeholder.com/1080x1580"} alt={props.movies.title} className="h-[150vh] object-cover w-full bg-cover bg-center" />
             <div className="bg-gradient-to-t opacity-90 from-black absolute inset-0"></div>
             <div className="bg-gradient-to-b opacity-90 from-black absolute inset-0"></div>
           </div>
           <div className="banner-contents   absolute inset-0 text-white flex   justify-center items-center container ">
-            <img src={props.movies.poster_path ? IMG_URL + props.movies.poster_path : "http://via.placeholder.com/1080x1580"} alt="" className="h-[50%] rounded-md shadow-md shadow-slate-500 object-cover  bg-cover bg-center mx-5" />
+            <img
+              data-aos="fade-right"
+              src={props.movies.poster_path ? IMG_URL + props.movies.poster_path : "http://via.placeholder.com/1080x1580"}
+              alt=""
+              className="h-[50%] rounded-md shadow-md shadow-slate-500 object-cover  bg-cover bg-center mx-5"
+            />
             <div className="max-w-4xl">
               <h1 className="banner-title text-4xl lg:text-7xl font-semibold pb-2">{props.movies.title}</h1>
               <div className="genre flex">
@@ -28,8 +40,8 @@ const MovieDetail = (props) => {
               <div className="actorMovie mt-4 ">
                 <div className="absolute">
                   <h3 className="text-3xl font-semibold mb-5">Cast</h3>
-                  <div className=" flex flex-nowrap relative items-center mr-10 ">
-                    <div className="w-full h-full overflow-y-hidden overflow-x-scroll scroll whitespace-nowrap scroll-smooth">
+                  <div className=" flex flex-nowrap relative items-center mr-10 group ">
+                    <div id="slider" className="w-full h-full overflow-y-hidden overflow-x-scroll  scroll whitespace-nowrap scroll-smooth">
                       {props.movieCredits.cast.map((credit, index) => (
                         <div key={index} className="cursor-pointer movie-card mr-4 inline-block overflow-hidden bg-slate-700 rounded-md relative hover:scale-110 transition-all ease-in-out duration-500">
                           <img src={credit.profile_path ? IMG_URL + credit.profile_path : "http://via.placeholder.com/1080x1580"} alt={credit.name} className="movieImage w-[200px]" />
