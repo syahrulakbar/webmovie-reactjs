@@ -10,7 +10,7 @@ const MovieDetail = (props) => {
   if (props.movies.genres === undefined || props.movieCredits.cast === undefined) {
   } else {
     return (
-      <section className="banner h-fit overflow-auto ">
+      <section className="banner h-fit overflow-hidden ">
         <div className="relative h-fit">
           <img src={props.movies.poster_path ? IMG_URL + props.movies.poster_path : "http://via.placeholder.com/1080x1580"} alt={props.movies.title} className="h-[150vh] object-cover w-full bg-cover bg-center" />
           <div className="bg-gradient-to-t opacity-90 from-black absolute inset-0"></div>
@@ -38,11 +38,11 @@ const MovieDetail = (props) => {
               <h2 className="banner-title text-4xl lg:text-4xl font-semibold pb-2">Overview</h2>
               <p>{props.movies.overview}</p>
             </div>
-            <div className="actorMovie mt-4 flex  ">
+            <div className="actorMovie mt-4 flex overflow-hidden  ">
               <div className="absolute">
                 <h3 className="text-4xl font-semibold mb-5">Cast</h3>
                 <div className=" flex flex-nowrap relative items-center mr-10 group ">
-                  <div id="slider" className="w-full h-full overflow-y-hidden overflow-x-scroll  scroll whitespace-nowrap scroll-smooth">
+                  <div id="slider" className="w-full h-full overflow-y-hidden overflow-x-scrool   whitespace-nowrap scroll-smooth">
                     {props.movieCredits.cast.map((credit, index) => (
                       <div key={index} className="cursor-pointer movie-card mr-4 inline-block overflow-hidden bg-slate-700 rounded-md relative hover:scale-110 transition-all ease-in-out duration-500">
                         <img src={credit.profile_path ? IMG_URL + credit.profile_path : "http://via.placeholder.com/1080x1580"} alt={credit.name} className="movieImage w-[200px]" />

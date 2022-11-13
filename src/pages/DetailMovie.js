@@ -35,10 +35,10 @@ const DetailMovie = () => {
     getMovieRequest();
   }, []);
   return (
-    <>
+    <div className="overflow-hidden">
       <MovieDetail movies={movies} movieCredits={credits} />
       <CastMovie movies={similar} />
-    </>
+    </div>
   );
 };
 
