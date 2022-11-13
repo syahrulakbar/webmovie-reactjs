@@ -1,7 +1,7 @@
 import "../style/style.css";
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 pt-4">
+    <footer className="bg-slate-900 pt-4 pb-20 lg:pb-0">
       <div className="w-full flex justify-center mb-2">
         <div className="w-[80%] border-t border-slate-100"></div>
       </div>

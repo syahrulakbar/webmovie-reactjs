@@ -45,7 +45,7 @@ const Home = () => {
       {isPending && <Spinner />}
       {error && <p>{error}</p>}
       {data && <MovieList movies={data} />}
-      {isVisible && <BsFillArrowUpCircleFill data-aos="fade-down" onClick={toTop} size={50} className=" cursor-pointer fixed bottom-0 right-0 m-5 text-white scroll-smooth" />}
+      {isVisible && <BsFillArrowUpCircleFill data-aos="fade-down" onClick={toTop} size={50} className=" cursor-pointer fixed bottom-0 right-0 mb-20 mr-5 text-slate-400  scroll-smooth" />}
     </>
   );
 };

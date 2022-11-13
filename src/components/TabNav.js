@@ -14,7 +14,7 @@ const TabNav = (props) => {
             value={props.value}
             type="text"
             placeholder="Search Movie"
-            className=" py-3 pl-16 pr-10 w-[30rem] text-gray-500 border rounded-md outline-none bg-slate-900 focus:bg-white focus:border-indigo-600"
+            className=" py-3 pl-16 pr-10 md:w-[30rem] text-gray-500 border rounded-md outline-none bg-slate-900 focus:bg-white focus:border-indigo-600"
           />
         </div>
       </div>

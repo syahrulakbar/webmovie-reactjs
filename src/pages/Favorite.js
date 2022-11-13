@@ -1,10 +1,13 @@
 import "../style/style.css";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import MovieList from "../components/MovieList";
 import secondImage from "../image/netflix-banner.png";
 import { FavoritesContext } from "../context/FavoriteContext";
 const Favorite = () => {
   const { favorites, totalFavorites } = useContext(FavoritesContext);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <section className="banner">
