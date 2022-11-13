@@ -11,14 +11,14 @@ const MovieDetail = (props) => {
   } else {
     return (
       <>
-        <section className="banner h-fit overflow-hidden">
+        <section className="banner h-fit overflow-hidden ">
           <div className="relative h-fit">
             <img src={props.movies.poster_path ? IMG_URL + props.movies.poster_path : "http://via.placeholder.com/1080x1580"} alt={props.movies.title} className="h-[150vh] object-cover w-full bg-cover bg-center" />
             <div className="bg-gradient-to-t opacity-90 from-black absolute inset-0"></div>
             <div className="bg-gradient-to-b opacity-90 from-black absolute inset-0"></div>
           </div>
-          <div className="banner-contents absolute inset-0 text-white xl:flex block justify-center items-center container ">
-            <div className="flex justify-center">
+          <div className="banner-contents  absolute inset-0 text-white xl:flex block justify-center items-center  ">
+            <div className="flex justify-center ">
               <img
                 data-aos="fade-right"
                 src={props.movies.poster_path ? IMG_URL + props.movies.poster_path : "http://via.placeholder.com/1080x1580"}
@@ -39,7 +39,7 @@ const MovieDetail = (props) => {
                 <h2 className="banner-title text-4xl lg:text-4xl font-semibold pb-2">Overview</h2>
                 <p>{props.movies.overview}</p>
               </div>
-              <div className="actorMovie mt-4 ">
+              <div className="actorMovie mt-4 flex  ">
                 <div className="absolute">
                   <h3 className="text-4xl font-semibold mb-5">Cast</h3>
                   <div className=" flex flex-nowrap relative items-center mr-10 group ">
