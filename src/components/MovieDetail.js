@@ -38,7 +38,7 @@ const MovieDetail = (props) => {
               <h2 className="banner-title text-4xl lg:text-4xl font-semibold pb-2">Overview</h2>
               <p>{props.movies.overview}</p>
             </div>
-            <div className="actorMovie mt-4 flex overflow-hidden  ">
+            <div className="actorMovie mt-4 flex overflow-hidden min-h-0 ">
               <div className="absolute">
                 <h3 className="text-4xl font-semibold mb-5">Cast</h3>
                 <div className=" flex flex-nowrap relative items-center mr-10 group ">
