@@ -10,7 +10,7 @@ const MovieDetail = (props) => {
   if (props.movies.genres === undefined || props.movieCredits.cast === undefined) {
   } else {
     return (
-      <section className="banner h-fit overflow-hidden ">
+      <section className="banner h-fit overflow-auto ">
         <div className="relative h-fit">
           <img src={props.movies.poster_path ? IMG_URL + props.movies.poster_path : "http://via.placeholder.com/1080x1580"} alt={props.movies.title} className="h-[150vh] object-cover w-full bg-cover bg-center" />
           <div className="bg-gradient-to-t opacity-90 from-black absolute inset-0"></div>
