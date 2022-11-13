@@ -41,7 +41,7 @@ const CastMovie = (props) => {
       slider.scrollLeft = slider.scrollLeft + 500;
     };
     return (
-      <div className=" bg-gradient-to-t from-slate-900 to-black">
+      <div className=" bg-gradient-to-t from-slate-900 to-black  ">
         <div className="container mx-auto ">
           <div className="actorMovie ">
             <h3 className="text-4xl text-center  font-semibold mb-10 text-white">Similar Movies</h3>
