@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const SearchBar = () => {
   return (
-    <header className="hidden md:block navbar-fixed bg-transparent absolute top-0 left-0 w-full flex items-center z-20">
+    <header className="hidden md:block navbar-fixed bg-transparent absolute top-0 left-0 w-full items-center z-20">
       <div className="container mx-auto">
         <div className="flex items-center justify-between relative">
           <div className="px-4">
